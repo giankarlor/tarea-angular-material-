@@ -1,0 +1,32 @@
+<div class = "row"></div>
+<div fxLayout fxLayoutGap="center">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+      <div fxLayout></div>
+        <mat-button-toggle href="#">INICIO</mat-button-toggle>
+        <mat-button-toggle routerLink="empleados">Empleados</mat-button-toggle>
+        <mat-button-toggle routerLink="clientes">Clientes</mat-button-toggle>
+        <mat-button-toggle routerLink="facturas">Facturas</mat-button-toggle>
+        <ul class="navbar-nav">
+          <div fxLayout></div>
+            <ng-container *ngIf="!logedIn(); else elseTemplate">
+              <li class="nav-item active">
+                <mat-button-toggle routerLink="inicio"> INGRESAR</mat-button-toggle>
+              </li>
+            </ng-container>
+            <ng-template #elseTemplate>
+              <li class="nav-item active">
+                <mat-button-toggle (click)="onLogout()">SALIR</mat-button-toggle>
+              </li>
+            </ng-template>
+        </ul>
+    </mat-button-toggle-group>
+  </nav>
+
+</div>
+
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>
+

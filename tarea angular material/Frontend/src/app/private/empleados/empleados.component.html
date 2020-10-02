@@ -1,0 +1,37 @@
+
+
+<table mat-table [dataSource]="empleados" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let emp">{{emp.id}}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Codigo">
+    <th mat-header-cell *matHeaderCellDef> Codigo </th>
+    <td mat-cell *matCellDef="let emp">{{emp.codigo}}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let emp">{{emp.nombre}}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Salario">
+    <th mat-header-cell *matHeaderCellDef> Salario </th>
+    <td mat-cell *matCellDef="let emp">{{emp.salario}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+
+
+</table>
+<br>
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

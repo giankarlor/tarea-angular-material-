@@ -1,0 +1,65 @@
+<!-- <div class="row">
+  <div class="col-md-8 mx-auto">
+    <ul class="list-group">
+      <li class="list-group-item">PRODUCTOS</li>
+      <li class="list-group-item list-group-item-warning" *ngFor="let pro of productos">{{"Id: "+pro.id+","+"Nombre: "+pro.nombre+","+"Precio: "+pro.precio+","+"Creado_por: "+pro.creado_por}}</li>
+    </ul>
+  </div>
+</div> -->
+<!--
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Creado_por</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pro of productos">
+      <th scope="row"><a [routerLink]="['/productos', pro.id]">{{pro.id}}</a></th>
+      <td>{{pro.nombre}}</td>
+      <td>{{pro.precio}}</td>
+      <td>{{pro.creado_por}}</td>
+    </tr>
+  </tbody>
+</table>
+-->
+
+
+<table mat-table [dataSource]="productos" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let pro">{{pro.id}}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let pro">{{pro.nombre}}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Precio">
+    <th mat-header-cell *matHeaderCellDef> Precio </th>
+    <td mat-cell *matCellDef="let pro">{{pro.precio}}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Creado_por">
+    <th mat-header-cell *matHeaderCellDef> Creado_por </th>
+    <td mat-cell *matCellDef="let pro">{{pro.creado_por}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+
+
+</table>
+<br>
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

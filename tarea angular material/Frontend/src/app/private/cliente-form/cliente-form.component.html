@@ -1,0 +1,33 @@
+<div class="row">
+
+    <form class="form-group" (ngSubmit)="ngOnGuardar()" #form="ngForm">
+      <fieldset>
+        <label class="control-label" for="idInput">Id</label>
+        <input matInput id="idInput" type="text" disabled = "true" [(ngModel)]="idCliente" name="idCliente">
+        <!--disabled="true"-->
+      </fieldset>
+      <mat-form-field appearance="fill" >
+        <mat-label>Nombre</mat-label>
+        <input matInput id="nombreInput" type="text" [(ngModel)]="nombreCliente" name="nombreCliente">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" >
+        <mat-label>Dirección</mat-label>
+        <input matInput id="direccionInput" type="text" [(ngModel)]="direccionCliente" name="direccionCliente">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" >
+        <mat-label>Nit</mat-label>
+        <input matInput id="nitInput" type="text" [(ngModel)]="nitCliente" name="nitCliente">
+      </mat-form-field>
+      <br>
+
+      <div class="example-button-row">
+        <button type="submit" mat-stroked-button color="primary" (click)="ngOnGuardar()">Guardar</button>
+        <button type="submit" mat-stroked-button color="warn" (click)="ngOnEliminar()">Eliminar</button>
+        <button type="submit" mat-stroked-button color="warn" (click)="ngOnCancelar()">Cancelar</button>
+      </div>
+
+    </form>
+  
+</div>

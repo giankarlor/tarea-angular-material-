@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 300px;
+}
+
+
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+
+  table {
+    width: 100%;
+  }
